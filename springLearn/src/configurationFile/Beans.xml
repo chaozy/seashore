@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="firstBean" class="uk.ac.ucl.HelloSpring" >
+        <property name="name" value="chaozy"></property>
+    </bean>
+    <bean id="countryBean" class="uk.ac.ucl.Country">
+        <constructor-arg index="0" type="java.lang.String" value="China"/>
+        <constructor-arg index="1" type="uk.ac.ucl.resource.Capital" ref="capitalBean"/>
+    </bean>
+    <bean id="capitalBean" class="uk.ac.ucl.resource.Capital">
+        <property name="capitalName" value="Beijing"></property>
+    </bean>
+</beans>
